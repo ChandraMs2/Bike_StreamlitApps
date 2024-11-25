@@ -11,9 +11,11 @@ st.markdown('Email:[ ChandraWork23@gmail.com](mailto:ChandraWork23@gmail.com)')
 # Load the dataset from a local CSV file
 @st.cache_data
 def load_data():
-    data = pd.read_csv('day.csv')
+    url = 'https://raw.githubusercontent.com/ChandraMs2/Bike_StreamlitApps/main/data/day.csv'
+    data = pd.read_csv(url)
     data['dteday'] = pd.to_datetime(data['dteday'])
     return data
+
 
 data = load_data()
 
